@@ -1,10 +1,8 @@
 <h2>My Heroes</h2>
 <ul class="heroes">
-    <!-- for add ccs class using angular binding [class.-some-css-class]-->
-    <li *ngFor="let hero of heroes" [class.selected]="hero === selectedHero" (click)="onSelect(hero)">
-        <span class="badge">{{hero.id}}</span> {{hero.name}}
+    <li *ngFor="let hero of heroes">
+        <a routerLink="/detail/{{hero.id}}">
+            <span class="badge">{{hero.id}}</span> {{hero.name}}
+        </a>
     </li>
 </ul>
-
-<!-- heroesDetail Binding with a heroes-detail.component-->
-<app-hero-detail [hero]="selectedHero"></app-hero-detail>
